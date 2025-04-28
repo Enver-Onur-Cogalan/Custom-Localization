@@ -3,5 +3,6 @@
     "select_language": "言語を選択",
     "home_title": "ホーム",
     "language_title": "言語",
-    "input_placeholder": "翻訳するために何かを書いてください..."
+    "input_placeholder": "翻訳するために何かを書いてください...",
+    "text": "言語変更に成功しました！"
 }

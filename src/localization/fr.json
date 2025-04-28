@@ -3,5 +3,6 @@
     "select_language": "Choisir la langue",
     "home_title": "Accueil",
     "language_title": "Langues",
-    "input_placeholder": "Écris quelque chose à traduire..."
+    "input_placeholder": "Écris quelque chose à traduire...",
+    "text": "Changement de langue réussi!"
 }

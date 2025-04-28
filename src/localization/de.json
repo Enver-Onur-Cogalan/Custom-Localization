@@ -3,5 +3,6 @@
     "select_language": "Sprache wählen",
     "home_title": "Startseite",
     "language_title": "Sprachen",
-    "input_placeholder": "Schreibe etwas zum Übersetzen..."
+    "input_placeholder": "Schreibe etwas zum Übersetzen...",
+    "text": "Sprachwechsel erfolgreich!"
 }
