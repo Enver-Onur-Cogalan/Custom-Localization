@@ -1,97 +1,119 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Localization App
 
-# Getting Started
+**Localization App** is a mobile application demonstrating dynamic language switching and persistence using React Native, Redux, i18next, and AsyncStorage.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 📋 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- Dynamic language switching between multiple languages (English, Turkish, German, Spanish, French, Japanese)
+- Language selection saved locally with AsyncStorage
+- Selected language is preserved even after app restart
+- Clean and minimalistic UI with animated transitions
+- Full offline functionality (no external translation APIs)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 🛠️ Technologies Used
 
-# OR using Yarn
-yarn start
+- React Native
+- Redux Toolkit
+- react-i18next
+- AsyncStorage
+- React Navigation (Bottom Tabs)
+- Lottie Animations
+- react-native-animatable
+
+---
+
+## 🚀 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Enver-Onur-Cogalan/Custom-Localization.git
 ```
 
-## Step 2: Build and run your app
+2. Install dependencies:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+yarn install
+```
 
-### Android
+3. Run the project:
 
-```sh
-# Using npm
-npm run android
+```bash
+yarn ios
+```
+or
 
-# OR using Yarn
+```bash
 yarn android
 ```
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## 📂 Folder Structure
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```
+/assets          
+  /images       → Flag images for language selection
+  /animations   → Lottie animations
+/localization    
+  en.json, tr.json, de.json, es.json, fr.json, jp.json → Language files
+/redux           
+  /languageSlice.js → Global language management
+/screens         
+  HomeScreen.js → Home page showing localized text
+  LanguageScreen.js → Language selection screen
+/navigation     
+  MainNavigation.js → Bottom tabs setup
 ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## 🌍 Supported Languages
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- English (`en`)
+- Turkish (`tr`)
+- German (`de`)
+- Spanish (`es`)
+- French (`fr`)
+- Japanese (`jp`)
 
-```sh
-# Using npm
-npm run ios
+Each language displays a localized success message upon selection.
 
-# OR using Yarn
-yarn ios
-```
+---
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🧠 Architecture Overview
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+| Layer | Purpose |
+|:--|:--|
+| Redux Toolkit | Global language state management |
+| AsyncStorage | Persistence of selected language |
+| i18next + react-i18next | Handling dynamic translations |
+| React Navigation | Screen navigation with Bottom Tabs |
+| Animations | Smooth user experience with Lottie and Animatable |
 
-## Step 3: Modify your app
+---
 
-Now that you have successfully run the app, let's make changes!
+## ⚙️ How Language Persistence Works
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+1. When a user selects a language:
+   - It is saved into AsyncStorage (`language` key).
+   - Redux state is updated.
+   - i18next dynamically changes the language.
+   
+2. When the app restarts:
+   - AppInitializer component loads the saved language from AsyncStorage.
+   - Redux state and i18n configuration are automatically updated.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+---
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🧑‍💻 Developed by
 
-## Congratulations! :tada:
+**Enver Onur Cogalan**
 
-You've successfully run and modified your React Native App. :partying_face:
+Dynamic localization made simple and elegant! 🎯
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+---
