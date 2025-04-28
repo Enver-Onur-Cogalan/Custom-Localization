@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import i18n, { setI18nConfig } from '../localization/i18n';
+import { useTranslation } from 'react-i18next';
+import i18n from '../localization/i18n';
 
 const HomeScreen = () => {
-    useEffect(() => {
-        setI18nConfig();
-    }, []);
+    const { t } = useTranslation();
 
     return (
         <View style={styles.container}>
-            <Text>{i18n.t('welcome')}</Text>
-            <Text>{i18n.t('input_placeholder')}</Text>
+            <Text>{t('welcome')}</Text>
+            <Text>{t('input_placeholder')}</Text>
         </View>
     );
 };

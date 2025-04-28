@@ -3,12 +3,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import LanguageScreen from '../screens/LanguageScreen';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 
 
 const MainNavigation = () => {
     const selectedLanguage = useSelector((state) => state.language.language);
+    const { t } = useTranslation();
 
     return (
         <Tab.Navigator
@@ -16,8 +18,16 @@ const MainNavigation = () => {
                 headerShown: false,
             }}
         >
-            <Tab.Screen name='Home' component={HomeScreen} />
-            <Tab.Screen name='Languages' component={LanguageScreen} />
+            <Tab.Screen
+                name='Home'
+                component={HomeScreen}
+                options={{ tabBarLabel: t('home_title') }}
+            />
+            <Tab.Screen
+                name='Languages'
+                component={LanguageScreen}
+                options={{ tabBarLabel: t('language_title') }}
+            />
         </Tab.Navigator>
     );
 };
