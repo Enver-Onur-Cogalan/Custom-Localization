@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainNavigation from './src/navigation/MainNavigation';
 
 const App = () => {
+
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setLanguage } from '../redux/languageSlice';
 import i18n from '../localization/i18n';
 import LottieView from 'lottie-react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { width } = Dimensions.get('window');
 
@@ -20,9 +21,14 @@ const languages = [
 const LanguageScreen = () => {
     const dispatch = useDispatch();
 
-    const handleLanguageSelect = (code) => {
-        dispatch(setLanguage(code));
-        i18n.changeLanguage(code);
+    const handleLanguageSelect = async (code) => {
+        try {
+            await AsyncStorage.setItem('language', code);
+            dispatch(setLanguage(code));
+            i18n.changeLanguage(code);
+        } catch (error) {
+            console.error('Error saving language to AsyncStorage:', error);
+        }
     };
 
     const renderItem = ({ item, index }) => (
