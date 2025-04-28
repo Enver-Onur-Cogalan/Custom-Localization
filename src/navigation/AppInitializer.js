@@ -1,8 +1,8 @@
 import { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { setLanguage } from '../redux/languageSlice'; // changeLanguage değil setLanguage doğru
-import i18n from '../localization/i18n'; // bunu ekle
+import { setLanguage } from '../redux/languageSlice';
+import i18n from '../localization/i18n'; 
 
 const AppInitializer = () => {
     const dispatch = useDispatch();
